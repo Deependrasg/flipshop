@@ -145,8 +145,8 @@ export default class Login extends Component {
             >
               <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-lg">
-                <h4 onClick={this.handleLoginClick}>Login</h4>
-                <h4 onClick={this.handleLogOutClick}>Signup</h4>
+                
+                <h4 onClick={this.handleLogOutClick}>New to Flipkart? Sign up</h4>
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>
@@ -180,7 +180,7 @@ export default class Login extends Component {
                 </form>
               </Modal.Body>
           <Modal.Footer>
-            <Button type="submit" onClick={this.handleSubmit} bsStyle="success" > Submit </Button>
+            <Button type="submit" onClick={this.handleSubmit} bsStyle="success" > Login </Button>
             <Button onClick={this.handleHide} > Close </Button>
           </Modal.Footer>
         </Modal>
@@ -194,8 +194,7 @@ export default class Login extends Component {
           >
             <Modal.Header closeButton>
               <Modal.Title id="contained-modal-title-lg">
-              <h4 onClick={this.handleLoginClick}>Login</h4>
-              <h4 onClick={this.handleLogOutClick}>Signup</h4>
+              <h4 onClick={this.handleLoginClick}>Existing User? Log in</h4>
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -291,7 +290,7 @@ export default class Login extends Component {
               </form>
             </Modal.Body>
           <Modal.Footer>
-            <Button type="submit" onClick={this.handleSubmit} bsStyle="success" > Submit </Button>
+            <Button type="submit" onClick={this.handleSubmit} bsStyle="success" > SignUp </Button>
             <Button onClick={this.handleHide} > Close </Button>
           </Modal.Footer>
         </Modal>
