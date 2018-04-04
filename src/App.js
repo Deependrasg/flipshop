@@ -5,9 +5,7 @@ import Fotter from './component/common/fotter.js';
 import Navibar from './component/common/navbar.js';
 import Home from './component/Home/home.js';
 import './static/css/app.css';
-
-
-
+import Offer,{ProductView} from './component/Offer/dailyOffer.js';
 
 class App extends Component {
   render() {
@@ -18,7 +16,9 @@ class App extends Component {
             <Header />
             <Navibar />
 
-            <Route path='/' component={Home} />
+            <Route exact path='/' component={Home} />
+            <Route exact path='/offers' component={Offer} />
+            <Route path="/offers/:id" component={ProductView} />
 
             <Fotter />
         </div>
@@ -28,6 +28,4 @@ class App extends Component {
 }
 
 export default App;
-
-
 

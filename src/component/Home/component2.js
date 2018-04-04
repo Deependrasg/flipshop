@@ -1,5 +1,6 @@
 import React,{Component}from 'react';
 import {Carousel} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 // import Slider1 from 
 import Paper from 'material-ui/Paper';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -282,8 +283,8 @@ export default class Slider extends Component{
        <Paper  style={ProductStyle} zDepth={3}>
           <children>
             <div style={ProductHead} >
-              <span style={productspan} >Trending Offers </span>
-              <Button bsStyle="primary" style={productbutton} > View All Products </Button>
+              <span style={productspan} > Trending Offers </span>
+             <Link to='/offers'> <Button bsStyle="primary" style={productbutton} >  View All Products </Button></Link> 
             </div>
           </children>
           {Product.map((data)=>(
