@@ -13,6 +13,7 @@ import FontIcon from 'material-ui/FontIcon';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Link } from 'react-router-dom';
 import{ Button } from 'react-bootstrap';
+import TextField from 'material-ui/TextField';
 
 const style = {
   paper: {
@@ -305,10 +306,96 @@ const style1={
     background: '#fb641b',
     color: '#fff',
   },
+  floatleft:{
+    float:"left",
+  },
+  rightdiv:{
+    float: 'right',
+    height: '700px',
+    marginTop: '-519px',
+    marginRight: '-51px',
+  },
+  pincode:{
+    fontWeight: '500',
+    cursor: 'pointer',
+    fontSize: '14px',
+    color: '#2874f0',
+    marginLeft: 'auto',
+    position: 'relative',
+    marginLeft: '-40px',
+  },
+  delivery:{
+    color: '#878787',
+    width: '110px',
+    paddingRight: '10px',
+    fontWeight: '500',
+    marginLeft:'10px',
+  },
+  question:{
+    borderRadius: '50%',
+    backgroundColor: '#fff',
+    color: '#878787',
+    fontWeight: '500',
+    width: '16px',
+    height: '16px',
+    fontSize: '11px',
+    lineHeight: '16px',
+    textSlign: 'center',
+    display: 'inline-block',
+    border: 'solid 1px #e0e0e0',
+    boxShadow: '0 0 1px 0 rgba(0, 0, 0, .2)',
+    verticalAlign: 'middle',
+    margin: '0 2px 0 8px',
+    cursor: 'pointer',
+  },
+  free:{
+    color: '#388e3c',
+  },
+  spanMargin:{
+    marginLeft: '10px',
+  },
+  spanButton:{
+    color: '#2874f0',
+    border: 'none',
+    fontSize: '14px',
+    boxShadow: 'none',
+    cursor: 'pointer',
+    padding: '0',
+    verticalAlign: 'middle',
+    marginTop: '-2px',
+    marginLeft:'2px',
+    backgroundColor: 'white',
+  },
+  flex:{
+        display: 'flex',
+  },
+  displayInline:{
+    display: 'inline-flex',
+  },
+  offerPrice:{
+        marginTop: '36px',
+        marginLeft: '20px',
+  },
+  off:{
+    marginLeft: '12px',
+    fontSize: '16px',
+    fontWeight: '500',
+    color: '#388e3c',
+    verticalAlign: 'middle',
+  },
+  ul:{
+      marginLeft: '76px',
+      marginBottom: '0px',
+      marginTop: '-16px',
+  },
+  Retail:{
+    marginLeft: "24px",
+  }
+
 }
 
-export const ProductView = ({ match }) => {
-  const product = Product.find(item => item.id === match.params.id);
+export const ProductView = ( match ) => {
+  const product = Product.find(item => item.id === match.match.params.id);
   return (
 <MuiThemeProvider>
     <div>
@@ -326,10 +413,133 @@ export const ProductView = ({ match }) => {
           <img style={style1.img} src={product.img} />
         </Paper> 
         <div style={style1.clear}> </div>
-          <Paper style={style1.buttonpaper} zDepth={0}> 
-            <Button bsStyle="primary" style={style1.button} >  View All Products </Button>
-            <Button bsStyle="primary" style={style1.button1} > View All Products </Button>
+          <Paper style={style1.buttonpaper} zDepth={0}>         
+          <Button bsStyle="primary" style={style1.button} onClick={() => match.addToCart('add', product.id)}>
+            <img width= "22px"src={require('../../static/img/ic_shopping_cart_white_24dp_2x.png')}/> ADD TO CART </Button>
+          <Button bsStyle="primary" style={style1.button1} ><img width= "22px"src={require('../../static/img/ic_shopping_cart_white_24dp_2x.png')}/> BUY NOW </Button>
           </Paper>
+      </div>
+      <div style={style1.rightdiv}>
+        <Paper zDepth={0}>
+            <div style={style1.floatleft} >
+                <h4>HP 15 APU Dual Core E2 - (4 GB/500 GB HDD/DOS) 15Q-BY001AU Laptop</h4>
+                <span>3.6  ★ &nbsp;</span>
+                <span>
+                    <span>710 Ratings&nbsp;</span>
+                    <span >&amp;</span>
+                    <span>&nbsp;150 Reviews</span>
+                    <span><img height="21" src={require('../../static/img/fa_8b4b59.png')}  /></span>
+                </span>
+            </div>
+            <div style={style1.clear}>
+            <div>
+                <span>Special Price</span>
+            </div>
+                <div style={style1.flex}> 
+                  <h1 >₹ 16,990</h1>
+                  <div style={style1.offerPrice}> <span>₹ 17,990 </span> 
+                        <span style={style1.off}> 5 %off </span>
+                        <span><img src={require('../../static/img/info-basic_ea3ba2.svg')} /></span>
+                  </div>
+                  </div>
+                  <h5>Hurry, Only a few left! </h5> 
+            </div>
+            <div>
+                <p style={style1.floatleft}>
+                <img src={require('../../static/img/download.svg')} width="18" height="18" />
+                <span style={style1.spanMargin}>No Cost EMIs from  ₹2,832 /month .Other EMIs from ₹824 /month</span>
+                    <button style={style1.spanButton}><span >View Plans &nbsp;</span>
+                        <img src={require('../../static/img/download (3).svg')} width="6" height="9" />
+                    </button>
+                </p>
+            </div>
+            <div>
+                <p style={style1.floatleft}>
+                <img src={require('../../static/img/download (1).svg')} width="18" height="18" />
+                <span style={style1.spanMargin}>Get upto ₹8,200 off on exchange</span>
+                    <button style={style1.spanButton}><span >Buy with Exchange &nbsp;</span>
+                         <img src={require('../../static/img/download (3).svg')} width="6" height="9" />
+                    </button>
+                </p>
+            </div>
+            <div>
+                <p style={style1.floatleft}>
+                <img src={require('../../static/img/download (2).svg')} width="18" height="18" />
+                <span style={style1.spanMargin} >Bank OfferExtra 5% off* with Axis Bank Buzz Credit Card</span>
+                    <button style={style1.spanButton}><span >T&C</span>
+                    </button>
+                </p>
+            </div>
+            <div style={style1.clear}>
+                <p style={style1.floatleft}>
+                <img src={require('../../static/img/download.svg')} width="18" height="18" />
+                <span style={style1.spanMargin}>Partner OfferDell Back To School Get 2 Years Additional Warranty with this Laptop from ₹999 per month.</span>
+                    <button style={style1.spanButton}><span >Know More</span>
+                    </button>
+                </p>
+            </div>
+
+            <div >
+                <div>
+                  <div>
+                    <span style={style1.delivery}>Delivery</span>
+                  </div>
+                   <div>
+                      <svg width="12" height="12" viewBox="0 0 9 12" class="_3VH2pM" xmlns="http://www.w3.org/2000/svg"></svg>
+                      <TextField
+                        hintText="452001"
+                        floatingLabelText="Check With Pin"
+                      />
+                      <span style={style1.pincode}> Clear </span> <br />
+                   </div>
+                  <div>
+                    <span >Delivery by7 Apr, Saturday | </span>
+                    <span style={style1.free}> Free </span>
+                    <span style={style1.question}>?</span>
+                  </div>
+                  <div><button style={style1.spanButton}><span >View Details</span></button></div>
+                </div> 
+            </div>
+
+            <div style={style1.displayInline}>
+                <div>
+                  <div>
+                    <span style={style1.delivery}>Highlights</span>
+                  </div>
+                  <div style={style1.ul}>
+                    <ul>
+                        <li>Intel Core i3 Processor (6th Gen)</li>
+                        <li>4 GB DDR4 RAM</li>
+                        <li>Linux/Ubuntu Operating System</li>
+                        <li>1 TB HDD</li>
+                        <li>15.6 inch Display</li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <span style={style1.delivery}>Services</span>
+                  </div>
+                  <div style={style1.ul}>
+                    <ul>
+                        <li>Intel Core i3 Processor (6th Gen)</li>
+                        <li>4 GB DDR4 RAM</li>
+                        <li>Linux/Ubuntu Operating System</li>
+                        <li>1 TB HDD</li>
+                        <li>15.6 inch Display</li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+             <div>
+                <div>
+                  <span style={style1.delivery}>Seller</span>
+                </div>
+                <div style={style1.ul}>
+                    <span style={style1.Retail}> Retail Net </span>
+                </div>
+            </div>
+        </Paper>
       </div>
       <h3>{ product.id } - { product.label }</h3>  
       <Link to={`/offers`}>Back to catalog</Link>
@@ -340,4 +550,4 @@ export const ProductView = ({ match }) => {
   )
 }
 
-// ic_shopping_cart_white_24dp_2x.png
+

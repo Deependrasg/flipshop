@@ -1,7 +1,7 @@
 import React,{Component}from 'react';
 import Login  from '../login/login.js'; 
-
-
+import Badge from 'material-ui/Badge';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 const style={
 	float: 'left',
     marginLeft: '92px',
@@ -9,9 +9,16 @@ const style={
     marginTop: '12px',
 }
 export default class Header extends Component{
+	// constructor(props) {
+ //    super(props);
+ //    this.state = {cartItems: null};
+ //  }
 
 	render(){
+		// const cartItems=this.state.cartItems;
+		const cartItem=null;
 		return(
+			<MuiThemeProvider>
 				<header>
 					<div id="flipkart-navbar">   
 					 <div className="row">
@@ -21,11 +28,24 @@ export default class Header extends Component{
 					     Search 
 					   </button>
 					   <Login />
+					   <span className='right'>
 					   <span className='right  right1'> More </span>
-					   <span className='right'> Cart </span>
+					   {cartItem ? (
+						   <Badge
+						      badgeContent={cartItem}
+						      primary={true}
+						    ><img width= "22px"src={require('../../static/img/ic_shopping_cart_white_24dp_2x.png')}/>
+						    </Badge>
+					   		):
+					   		<img width= "22px"src={require('../../static/img/ic_shopping_cart_white_24dp_2x.png')}/>
+						   
+					   }
+					    	Cart 
+					    </span>
 					 </div>  
 					 </div>			
 				</header>
+			</MuiThemeProvider>
 			);
 
 	}
