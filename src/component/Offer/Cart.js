@@ -268,14 +268,47 @@ export default class Cart extends Component {
 	render(){
 		const cartItems=this.props.cartItems.length;
 		const Product=this.props.product.find(item=>item.id === this.props.cartItems[0]);
+		const ListItems = this.props.cartItems.map((cartItems) =>
+				  {const Products=this.props.product.find(item=>item.id === cartItems)
+				 return(
+				 	<Paper zDepth={1} style={item.paper1} >
+					<div style={item.paper1div}>
+						<div style={item.imgdiv}>
+							<img style={item.img} src={Products.img} />
+						</div>
+						<div style={item.paper1div1}>
+							<div style={item.div1div1}>
+								<Link style={item.paper1div11} to="/" >Dell Inspiron Core i3 6th Gen - (4 GB/1 TB HDD/Ubuntu) 5567 Notebook </Link>
+							</div>
+							<div style={item.div1div2}>15.6 inch, Black, 2.36 kg</div>
+							<div style={item.div1div3}>Seller: SAMRAT</div>
+							<div style={item.div1div4}>
+								<div style={item.price}>1200</div>
+								<div style={item.offer}>
+									<span>1 Offer Applied</span>
+								</div>
+							</div>
+						</div>
+						<div style={item.div3}>
+							<div style={item.div31}><span>Free delivery by Tue, Apr 10</span></div>
+							<div style={item.div32}><span>10 Days Replacement Policy</span></div>
+						</div>
+					</div>
+					 </Paper>
+				  	
+				  	)
+				}
+				);
 	return(
 		<MuiThemeProvider>
 		
 			<Paper style={style1.paper} zDepth={1} >
+
 				<Paper style={style1.paper1} zDepth={1}> <span style={style1.paper1span}> MY CART  </span>
 				</Paper>
 			{cartItems !=0  ? (
 				<div>
+				{ListItems}
 					<Paper zDepth={1} style={item.paper1} >
 					<div style={item.paper1div}>
 						<div style={item.imgdiv}>
