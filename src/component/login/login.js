@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import {  ButtonToolbar, Button,
            Modal,Radio} from 'react-bootstrap';
@@ -122,6 +123,34 @@ export default class Login extends Component {
 
 
   handleSubmit(event) {
+    var bodyFormData = new FormData();
+    if(this.state.isLoggedIn){
+     bodyFormData.set('email', this.state.email);
+     bodyFormData.set('password', this.state.password);
+
+      axios({
+              method: 'post',
+              url: 'http://127.0.0.1:8000/user/login/',
+              data: bodyFormData,
+              config: { headers: {'Content-Type': 'multipart/form-data' }}
+                        })
+            .then(function (response,status, xhr) {
+                if (response.status === 200){
+                    window.localStorage.setItem('access_token',response.data.token)
+
+                    this.props.addToken(response.data.token)
+                    this.props.addUserName(response.data.email)
+                }
+                console.log(response);
+
+            }.bind(this))
+            .catch(function (response) {
+                //handle error
+                console.log(response);
+            });
+                
+    }else {alert('logout')}
+
     event.preventDefault();
  	
   }

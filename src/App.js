@@ -6,6 +6,7 @@ import Navibar from './component/common/navbar.js';
 import Home from './component/Home/home.js';
 import './static/css/app.css';
 import Offer,{ProductView} from './component/Offer/dailyOffer.js';
+import Cart from './component/Offer/Cart.js';
 
 const Product=[
   {
@@ -112,8 +113,11 @@ class App extends Component {
     super();
     this.state = {
       cartItems: [],
+      token: window.localStorage.access_token,
+      userName:null,
     }
     this.addToCart=this.addToCart.bind(this);
+    this.addToken=this.addToken.bind(this);
   }
 
   addToCart (action, item) {
@@ -124,23 +128,46 @@ class App extends Component {
     }
   }
 
+  addToken(token){
+    if(token){
+      this.setState({'token':token})
+    } else {
+      this.setState({'token': null})
+    }
+  }
+
+  addUserName(userName){
+    if(userName){
+      this.setState({'userName':userName})
+    }else {
+      this.setState({'userName':userName})
+    }
+  }
   render() {
 
       const ProductViewWithProps = props => (
         <ProductView {...props} addToCart={this.addToCart} />
       );
 
+      const CartItemtoSale= props =>(
+        <Cart cartItems={this.state.cartItems}  product={Product}/>
+        );
+
     return (
       <Router>
         <div className="App">
-            
-            <Header cartItems={this.state.cartItems} />
+            <Header 
+                  cartItems={this.state.cartItems} 
+                  userName={this.state.userName}
+                  addUserName={this.addUserName} 
+                  Token={this.state.token} 
+                  addToken={this.addToken} />
             <Navibar />
 
             <Route exact path='/' component={Home} />
             <Route exact path='/offers' component={Offer} />
             <Route path="/offers/:id" component={ProductViewWithProps} />
-
+            <Route exact path='/viewCart' component={CartItemtoSale} />
             <Fotter />
         </div>
       </Router>

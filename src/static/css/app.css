@@ -13,6 +13,7 @@
     line-height: 80px;
     vertical-align: top;
     margin-top: -8px;
+    float: right;
 }
 
 .flipkart-navbar-input {
@@ -53,8 +54,9 @@ span>#FlipKart {
 
 #flipkart-navbar .right{
     float: right;
-    margin-bottom: -7px;
-    margin-top: -72px;
+    margin-bottom: -37px;
+    margin-top: -38px;
+
 }
 
 .profile-li{
@@ -77,12 +79,6 @@ span>#FlipKart {
 .menu{
     cursor: pointer;
 }
-
-
-
-
-
-
 
 .modal-container {
   position: relative;
