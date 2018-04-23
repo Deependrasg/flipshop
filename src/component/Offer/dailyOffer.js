@@ -1,15 +1,30 @@
 import React,{Component} from 'react';
 import Paper from 'material-ui/Paper';
 import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/MenuItem';
-import RemoveRedEye from 'material-ui/svg-icons/image/remove-red-eye';
-import PersonAdd from 'material-ui/svg-icons/social/person-add';
-import ContentLink from 'material-ui/svg-icons/content/link';
+
+// import MenuItem from 'material-ui/MenuItem';
+import { MenuItem } from 'material-ui/Menu';
+
+// import RemoveRedEye from 'material-ui/svg-icons/image/remove-red-eye';
+import RemoveRedEye from 'material-ui-icons/RemoveRedEye';
+
+import PersonAdd from 'material-ui-icons/PersonAdd';
+
+// import ContentLink from 'material-ui/svg-icons/content/link';
+// import { Link } from 'material-ui-icons/Link' as ContentLink;
+
 import Divider from 'material-ui/Divider';
-import ContentCopy from 'material-ui/svg-icons/content/content-copy';
-import Download from 'material-ui/svg-icons/file/file-download';
-import Delete from 'material-ui/svg-icons/action/delete';
-import FontIcon from 'material-ui/FontIcon';
+
+// import ContentCopy from 'material-ui/svg-icons/content/content-copy';
+import ContentCopy from 'material-ui-icons/ContentCopy';
+
+// import Download from 'material-ui/svg-icons/file/file-download';
+import FileDownload from 'material-ui-icons/FileDownload';
+
+// import Delete from 'material-ui/svg-icons/action/delete';
+import Delete from 'material-ui-icons/Delete';
+
+// import FontIcon from 'material-ui/FontIcon';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Link } from 'react-router-dom';
 import{ Button } from 'react-bootstrap';

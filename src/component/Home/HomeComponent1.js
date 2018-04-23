@@ -1,7 +1,8 @@
 import React from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+// import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import StarBorder from 'material-ui-icons/StarBorder';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import Image1 from '../../static/img/slider1.jpg'
