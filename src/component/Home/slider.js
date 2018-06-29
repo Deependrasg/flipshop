@@ -1,6 +1,6 @@
 import React,{Component}from 'react';
 import {Carousel} from 'react-bootstrap';
-// import Slider1 from 
+// import Slider1 from
 
 const style={
 		width:'100%',
@@ -16,7 +16,7 @@ export default class Slider extends Component{
   constructor(props, context) {
     super(props, context);
 
-    this.handleSelect = this.handleSelect.bind(this);
+    // this.handleSelect = this.handleSelect.bind(this);
 
     this.state = {
       index: 0,
@@ -24,22 +24,21 @@ export default class Slider extends Component{
     };
   }
 
-  handleSelect(selectedIndex, e) {
-    this.setState({
-      index: selectedIndex,
-      direction: e.direction
-    });
-  }
+  // handleSelect(selectedIndex, e) {
+  //   this.setState({
+  //     index: selectedIndex,
+  //     direction: e.direction
+  //   });
+  // }
 
+      // activeIndex={index}
+      //   direction={direction}
+      //   onSelect={this.handleSelect}
   render() {
     const { index, direction } = this.state;
 
     return (
-      <Carousel
-        activeIndex={index}
-        direction={direction}
-        onSelect={this.handleSelect}
-      >
+      <Carousel>
       	<Carousel.Item>
           <img  style= {style} src={require('../../static/img/slider4.jpg')} />
           <Carousel.Caption>
